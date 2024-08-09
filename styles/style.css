@@ -1,13 +1,40 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+@font-face {
+    font-family: 'satoshi';
+    src: url('../assets/fonts/Satoshi/Fonts/OTF/Satoshi-Regular.otf');
 }
 
+@font-face {
+    font-family: 'internal';
+    src: url('../assets/fonts/Internal_CF/Fontspring-DEMO-integralcf-bold.otf');
+}
+
+/* Variaveis css */
 :root{
     --primary-color--:#000000;
     --second-color--:#F0F0F0;
 }
+
+
+/* ---------- Reset css ----------*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+p{
+    font-family: 'satoshi';
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+}
+
+.title{
+    font-family: internal;
+}
+
+/* --------------------------------*/
 
 header{
     display: flex;
@@ -38,31 +65,6 @@ header{
     gap: 0.75rem;
 }
 
-/* Banner brands */
-#banner__brands{
-    background-color: var(--primary-color--);
-    height: 5.5rem;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-#banner__brands > img{
-    height: 22px;
-    width: 100px;
-
-    @media screen and (min-width:768px) {
-        height: 32px;
-        width: 133px;
-    };
-
-    @media screen and (min-width:1024px){
-        height: 35px;
-        width: 200px;
-    };
-}
-
 /* Banner */
 #banner{
     background-color: var(--second-color--);
@@ -91,5 +93,48 @@ header{
             font-size: 14px;
             text-align: justify;
         }
+
+        #shopco__informations{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 1.5rem;
+
+            h3{
+                font-family: 'satoshi';
+                font-size: 2rem;
+                font-weight: 700;
+            }
+
+            p{
+                font-size: 12px;
+            }
+        }
     }
+}
+
+/* Banner brands */
+#banner__brands{
+    background-color: var(--primary-color--);
+    height: 5.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 10px;
+}
+
+#banner__brands > img{
+    height: 22px;
+    width: 100px;
+
+    @media screen and (min-width:768px) {
+        height: 32px;
+        width: 133px;
+    };
+
+    @media screen and (min-width:1024px){
+        height: 35px;
+        width: 200px;
+    };
 }
