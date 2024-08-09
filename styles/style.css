@@ -214,7 +214,6 @@ header{
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding: 0 10px;
 
     button{
         background-color: white;
@@ -230,6 +229,113 @@ header{
 
         @media screen and (min-width:768px){
             width: 218px;
+        }
+    }
+}
+
+
+/* browse__by__dress__style */
+#browse__by__dress__style{
+    background-color: var(--second-color--);
+    padding: 40px 0;
+    border-radius: 40px;
+}
+
+
+
+#newsletter{
+    position: relative;
+    margin-bottom: -7rem;
+    background-color: var(--primary-color--);
+    color: white;
+    padding: 36px 24px;
+    border-radius: 20px;
+
+    h2{
+        flex: 4;
+        font-size: 2rem;
+        text-align: center;
+        font-family: 'internal';
+        line-height: 35px;
+
+        @media screen and (min-width:768px){
+            text-align: left;
+            font-size: 2.5rem;
+            line-height: 50px;
+        }
+    }
+
+    form{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        flex: 1.5;
+
+        
+
+        label{
+            overflow: hidden;
+            background-color: white;
+            padding-left: 10px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+
+            input{
+                padding: 10px;
+                outline: none;
+                border: 0;
+                width: 100%;
+                border-radius: 20px;
+            }
+        }
+        
+
+        button{
+            background-color: white;
+            padding:12px 16px;
+            border: 0;
+            border-radius: 62px;
+            font-weight: bold;
+        }
+    }
+
+    @media screen and (min-width:768px){
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+    }
+}
+
+/* footer */
+footer{
+    background-color: var(--second-color--);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #main__footer{
+        padding-top: 10rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        width: 97vw;
+
+        li > p{
+            width: 300px;
+        }
+
+        li:not(:first-child){
+            
+            width: 140px;
+        }
+
+        @media screen and (min-width:1024px){
+            justify-content: space-evenly;
+        }
+
+        @media screen and (min-width:1200px){
+            width:90vw;
         }
     }
 }
