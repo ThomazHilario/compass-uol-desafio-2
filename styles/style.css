@@ -9,6 +9,35 @@
     --second-color--:#F0F0F0;
 }
 
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+
+#top__header{
+    display: flex;
+    gap: 0.6rem;
+
+    #title__header{
+        font-size: 1.5rem;
+    }
+}
+
+#menu{
+    display: none;
+}
+
+#search{
+    display: none;
+}
+
+#menu-auxiliar{
+    list-style: none;
+    display: flex;
+    gap: 0.75rem;
+}
+
 /* Banner brands */
 #banner__brands{
     background-color: var(--primary-color--);
@@ -32,4 +61,35 @@
         height: 35px;
         width: 200px;
     };
+}
+
+/* Banner */
+#banner{
+    background-color: var(--second-color--);
+    padding: 10px 10px;
+
+    #header__banner{
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+
+
+        h2{
+            font-size: 2.1rem;
+        }
+
+        button{
+            background-color: var(--primary-color--);
+            color: white;
+            padding: 16px;
+            width: 100%;
+            border: none;
+            border-radius: 62px;
+        }
+        
+        p{
+            font-size: 14px;
+            text-align: justify;
+        }
+    }
 }
