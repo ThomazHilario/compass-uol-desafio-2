@@ -1,0 +1,51 @@
+
+/* ---------- Reset css ----------*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'satoshi';
+}
+
+body{
+    min-height: 100vh;
+}
+
+p{
+    font-family: 'satoshi';
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+}
+
+.title{
+    font-family: 'internal';
+}
+
+.title__section{
+    text-align: center;
+    font-size: 2rem;
+}
+
+hr{
+    display: block;
+    width: 90%;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+main > section{
+    margin: 30px 0;
+}
+
+button{
+    cursor: pointer;
+}
+
+ul{
+    list-style: none;
+}
+
+/* --------------------------------*/

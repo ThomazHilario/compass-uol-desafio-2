@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: 'internal';
-    src: url('../assets/fonts/Internal_CF/Fontspring-DEMO-integralcf-bold.otf');
+    src: url('../assets/fonts/Internal_CF/Fontspring-DEMO-integralcf-regular.otf');
 }
 
 /* Variaveis css */
@@ -15,44 +15,43 @@
 }
 
 
-/* ---------- Reset css ----------*/
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-p{
-    font-family: 'satoshi';
-    color: rgba(0, 0, 0, 0.6);
-    font-weight: 500;
-}
-
-.title{
-    font-family: internal;
-}
-
-/* --------------------------------*/
-
+/* ---------- header ----------*/
 header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 10px;
+
+    @media screen and (min-width:1200px){
+        padding: 10px 4rem;
+    }
 }
 
 #top__header{
     display: flex;
+    align-items: center;
     gap: 0.6rem;
 
     #title__header{
-        font-size: 1.5rem;
+        font-size: 1rem;
+    }
+
+    img{
+        @media screen and (min-width:768px){
+            display: none;
+        }
     }
 }
 
 #menu{
     display: none;
+    ul{
+        display: flex;
+        gap: 1.5rem;
+    }
+    @media screen and (min-width:768px){
+        display: block;
+    }
 }
 
 #search{
@@ -65,19 +64,49 @@ header{
     gap: 0.75rem;
 }
 
-/* Banner */
+/* --------------------------------*/
+
+/* ---------- Banner ----------*/
 #banner{
+    display: flex;
+    flex-wrap: wrap;
     background-color: var(--second-color--);
-    padding: 10px 10px;
+    padding: 10px 10px 0px 10px;
+
+    @media screen and (min-width:1200px){
+        padding-left: 4rem;
+        padding-top: 2rem;
+    }
 
     #header__banner{
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: 0.7rem;
 
-
         h2{
             font-size: 2.1rem;
+            @media screen and (min-width:768px){
+                font-size: 3.5rem;
+            }
+
+            @media screen and (min-width:1024px){
+                width: 500px;
+            }
+        }
+
+
+        .text__banner{
+            font-size: 14px;
+            text-align: justify;
+
+            @media screen and (min-width:540px){
+                font-size: 16px;
+            }
+
+            @media screen and (min-width:1024px){
+                width: 510px;
+            }
         }
 
         button{
@@ -87,12 +116,12 @@ header{
             width: 100%;
             border: none;
             border-radius: 62px;
+
+            @media screen and (min-width:540px){
+                width: 200px;
+            }
         }
-        
-        p{
-            font-size: 14px;
-            text-align: justify;
-        }
+    
 
         #shopco__informations{
             display: flex;
@@ -108,7 +137,46 @@ header{
 
             p{
                 font-size: 12px;
+                @media screen and (min-width:768px){
+                    font-size: 16px;
+                }
             }
+
+            @media screen and (min-width:1024px){
+                margin-top: 30px;
+                justify-content: start;
+                gap: 2rem;
+            }
+        }
+        
+        @media screen and (min-width:1024px){
+            width: 50%;
+            gap: 1rem;
+        }
+    }
+
+    #container__fashionable{
+        width: 100%;
+        height: 300px;
+        overflow-y: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            height: 300px;
+            transform: translateY(10%);
+            scale: 1.50;
+            object-fit: cover;
+
+            @media screen and (min-width:1024px){
+                scale: 2.5;
+            }
+        }
+
+        @media screen and (min-width:1024px){
+            width: 50%;
+            height: 500px;
         }
     }
 }
@@ -137,4 +205,31 @@ header{
         height: 35px;
         width: 200px;
     };
+}
+
+/* --------------------------------*/
+
+/* ---------- section products ----------*/
+.section__products{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 10px;
+
+    button{
+        background-color: white;
+        display: block;
+        margin: auto;
+        border: 1px solid #0000001A;
+        padding: 16px 54px;
+        border-radius: 62px;
+        width: 100%;
+        font-size: 1rem;
+        font-weight: bold;
+        box-shadow: 0px 0px 1px black;
+
+        @media screen and (min-width:768px){
+            width: 218px;
+        }
+    }
 }
