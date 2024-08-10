@@ -11,7 +11,7 @@
     <header>
 
         <div id="top__header">
-            <img src="assets/icons/menu.svg" alt="imagem do menu">
+            <img id="button_menu" src="assets/icons/menu.svg" alt="imagem do menu">
 
             <h1 id="title__header" class="title">SHOP.CO</h1>
         </div>
@@ -24,6 +24,22 @@
                 <li>Brands</li>
             </ul>
         </nav>
+        
+        <dialog id="dialog__menu">
+            <nav id="menu__mobile">
+                <ul>
+                    <li>Shop</li>
+                    <li>On Sale</li>
+                    <li>New Arrivals</li>
+                    <li>Brands</li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                            
+                        <input type="text" placeholder="Seach for products"/>
+                    </li>
+                </ul>
+            </nav>
+        </dialog>
 
         <!-- input -->
          <div id="search">
@@ -37,6 +53,7 @@
             <li>
                 <a href="#"><img src="assets/icons/cart.svg" alt="imagem do carrinho"></a>
             </li>
+
             <li>
                 <a href="#"><img src="assets/icons/user.svg" alt="imagem do profile"></a>
             </li>
@@ -233,5 +250,8 @@
             <div id="payments"></div>
         </div>
     </footer>
+
+
+    <script src="build/main.js"></script>
 </body>
 </html>
