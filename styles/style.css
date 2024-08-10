@@ -206,7 +206,6 @@ header{
         width: 200px;
     };
 }
-
 /* --------------------------------*/
 
 /* ---------- section products ----------*/
@@ -232,17 +231,18 @@ header{
         }
     }
 }
+/* --------------------------------*/
 
-
-/* browse__by__dress__style */
+/* ---------- browse__by__dress__style ----------*/
 #browse__by__dress__style{
     background-color: var(--second-color--);
     padding: 40px 0;
     border-radius: 40px;
 }
+/* ------------------------------- */
 
 
-
+/* ---------- newslletter ----------*/
 #newsletter{
     position: relative;
     margin-bottom: -7rem;
@@ -307,8 +307,10 @@ header{
         align-items: center;
     }
 }
+/* -------------------------------- */
 
-/* footer */
+
+/* ---------- footer ----------*/
 footer{
     background-color: var(--second-color--);
     display: flex;
@@ -339,3 +341,4 @@ footer{
         }
     }
 }
+/* -------------------------------- */
