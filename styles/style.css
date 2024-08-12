@@ -4,8 +4,18 @@
 }
 
 @font-face {
+    font-family: 'satoshi-bold';
+    src: url('../assets/fonts/Satoshi/Fonts/OTF/Satoshi-Bold.otf');
+}
+
+@font-face {
     font-family: 'internal';
     src: url('../assets/fonts/Internal_CF/Fontspring-DEMO-integralcf-regular.otf');
+}
+
+@font-face {
+    font-family: 'internal-bold';
+    src: url('../assets/fonts/Internal_CF/Fontspring-DEMO-integralcf-bold.otf');
 }
 
 /* Variaveis css */
@@ -16,7 +26,7 @@
 
 
 /* ---------- header ----------*/
-header{
+#header{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,7 +43,7 @@ header{
     gap: 0.6rem;
 
     #title__header{
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     img{
@@ -294,6 +304,80 @@ header{
     flex-direction: column;
     gap: 2rem;
 
+    .container__products{
+        display: flex;
+        gap: 0.5rem;
+        
+        overflow-x: scroll;
+        
+        .product{
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+
+            .body__product{
+                display: flex;
+                flex-direction: column;
+                gap:0.5rem;
+
+                h3{
+                    font-family: 'satoshi-bold';
+                    font-size: 1.3rem;
+                }
+
+                .product__review{
+                    display: flex;
+                    gap: 1rem;
+                    .rating__stars{
+                        display: flex;
+                    }
+
+                    article{
+                        display: flex;
+
+                        
+                    }
+                }
+            }
+
+            .footer__product{
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+
+                h4{
+                    font-family: 'satoshi-bold';
+                    font-size: 1.5rem; 
+                }
+
+                .old__price{
+                    text-decoration: line-through;
+                    color: rgba(0, 0, 0, 0.400);
+                }
+
+                p{
+                    background-color: rgba(255, 0, 0, 0.100);
+                    color: #FF3333;
+                    font-size: 0.725rem;
+                    font-weight:bold;
+                    border-radius: 62px;
+                    padding: 0.1rem 0.7rem;
+                    text-align: center;
+                }
+
+            }
+
+            
+        }
+
+        @media screen and (min-width:768px){
+            overflow-x: visible;
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: repeat(auto-fit,minmax(300px,  300px));
+        }
+    }
+
     button{
         background-color: white;
         display: block;
@@ -307,7 +391,7 @@ header{
         box-shadow: 0px 0px 1px black;
 
         @media screen and (min-width:768px){
-            width: 218px;
+            width: 250px;
         }
     }
 }
@@ -438,7 +522,7 @@ header{
 
 
 /* ---------- footer ----------*/
-footer{
+#footer{
     background-color: var(--second-color--);
     display: flex;
     flex-direction: column;

@@ -4,9 +4,9 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-family: 'satoshi';
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    font-family: 'satoshi', sans-serif;
 }
 
 body{
@@ -20,8 +20,12 @@ p{
 }
 
 .title{
-    font-family: 'internal';
+    font-family: 'internal-bold';
     font-size: 2rem;
+
+    @media screen and (min-width:768px){
+        font-size: 3rem;
+    }
 }
 
 .title__section{
