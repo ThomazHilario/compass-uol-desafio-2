@@ -96,7 +96,7 @@ function insertProducts(products:ProductProps[], localSection:HTMLDivElement){
         return(`
             <div class="product">
                     <header class="header__product">
-                        <img src="${product.image}" alt="image do produto ${product.title}"/>
+                        <img src="assets/arrivals/t-shirt.svg" alt="image do produto ${product.title}"/>
                     </header>
 
                     <section class="body__product">
