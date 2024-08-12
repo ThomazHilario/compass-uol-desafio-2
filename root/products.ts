@@ -96,7 +96,7 @@ function insertProducts(products:ProductProps[], localSection:HTMLDivElement){
         return(`
             <div class="product">
                     <header class="header__product">
-                        <img src="${product.image}"/>
+                        <img src="${product.image}" alt="image do produto ${product.title}"/>
                     </header>
 
                     <section class="body__product">
@@ -119,7 +119,7 @@ function insertProducts(products:ProductProps[], localSection:HTMLDivElement){
 
                         ${product.discount ? (`
                             <h4 class="old__price">${'$' + product.price}</h4>
-                            <p> - ${product.discount} % </p>`
+                            <p> - ${product.discount}% </p>`
                         ) : ''}
                     </footer>
                 </div>
