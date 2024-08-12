@@ -9,6 +9,11 @@
     font-family: 'satoshi', sans-serif;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
 body{
     min-height: 100vh;
 }
