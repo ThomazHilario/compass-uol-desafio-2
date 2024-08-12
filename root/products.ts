@@ -136,12 +136,9 @@ function insertProducts(products:ProductProps[], localSection:HTMLDivElement){
 
 // containers products
 const containersProducts = document.querySelectorAll('.container__products')
-
-setTimeout(() => {
     
 // Insert arrivals Products
 insertProducts(productsArrivals, containersProducts[0] as HTMLDivElement)
 
 // Insert top selling products
 insertProducts(productsTopSelling, containersProducts[1] as HTMLDivElement)
-},3000)

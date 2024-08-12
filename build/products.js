@@ -115,9 +115,7 @@ function insertProducts(products, localSection) {
 }
 // containers products
 const containersProducts = document.querySelectorAll('.container__products');
-setTimeout(() => {
-    // Insert arrivals Products
-    insertProducts(productsArrivals, containersProducts[0]);
-    // Insert top selling products
-    insertProducts(productsTopSelling, containersProducts[1]);
-}, 3000);
+// Insert arrivals Products
+insertProducts(productsArrivals, containersProducts[0]);
+// Insert top selling products
+insertProducts(productsTopSelling, containersProducts[1]);
