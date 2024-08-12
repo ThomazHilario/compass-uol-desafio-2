@@ -2,28 +2,28 @@
 // Arrivals 
 const productsArrivals = [
     {
-        image: '../assets/arrivals/t-shirt.svg',
+        image: 'assets/arrivals/t-shirt.svg',
         price: 120,
         title: 'T-SHIRT WITH TAPE DETAILS',
         discount: null,
         rating: 4
     },
     {
-        image: '../assets/arrivals/skinny-fet-jeans.svg',
+        image: 'assets/arrivals/skinny-fet-jeans.svg',
         price: 260,
         title: 'SKINNY FIT JEANS',
         discount: 20,
         rating: 3
     },
     {
-        image: '../assets/arrivals/checkred-shirt.svg',
+        image: 'assets/arrivals/checkred-shirt.svg',
         price: 180,
         title: 'SKINNY FIT JEANS',
         discount: null,
         rating: 4
     },
     {
-        image: '../assets/arrivals/sleeve-t-shirt.svg',
+        image: 'assets/arrivals/sleeve-t-shirt.svg',
         price: 160,
         title: 'SKINNY FIT JEANS',
         discount: 30,
@@ -33,28 +33,28 @@ const productsArrivals = [
 // Top Selling
 const productsTopSelling = [
     {
-        image: '../assets/top_selling/Vertical-Striped-Shirt.svg',
+        image: 'assets/top_selling/Vertical-Striped-Shirt.svg',
         price: 232,
         title: 'Vertical Striped Shirt',
         discount: 20,
         rating: 5
     },
     {
-        image: '../assets/top_selling/Courage-Graphic-T-Shirt.svg',
+        image: 'assets/top_selling/Courage-Graphic-T-Shirt.svg',
         price: 145,
         title: 'Courage Graphic T-shirt',
         discount: null,
         rating: 4
     },
     {
-        image: '../assets/top_selling/Loose-Fit-Bermuda-Shorts.svg',
+        image: 'assets/top_selling/Loose-Fit-Bermuda-Shorts.svg',
         price: 80,
         title: 'Loose Fit Bermuda Shorts',
         discount: null,
         rating: 3
     },
     {
-        image: '../assets/top_selling/Faded-Skinny-Jeans.svg',
+        image: 'assets/top_selling/Faded-Skinny-Jeans.svg',
         price: 210,
         title: 'Faded Skinny Jeans',
         discount: null,
@@ -79,7 +79,7 @@ function insertProducts(products, localSection) {
         return (`
             <div class="product">
                     <header class="header__product">
-                        <img src="assets/arrivals/t-shirt.svg" alt="image do produto ${product.title}"/>
+                        <img src="${product.image}" alt="image do produto ${product.title}"/>
                     </header>
 
                     <section class="body__product">
