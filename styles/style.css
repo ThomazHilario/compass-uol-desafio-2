@@ -300,6 +300,7 @@
 
 /* ---------- section products ----------*/
 .section__products{
+    padding-left: 0.5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -371,6 +372,10 @@
         }
 
         @media screen and (min-width:768px){
+            padding-left: 0;
+            display: block;
+            margin: auto;
+            width: 85vw;
             overflow-x: visible;
             display: grid;
             justify-content: space-between;
@@ -399,6 +404,9 @@
 
 /* ---------- browse__by__dress__style ----------*/
 #browse__by__dress__style{
+    display: block;
+    margin: auto;
+    width: 95vw;
     background-color: var(--second-color--);
     padding: 40px 0;
     border-radius: 40px;
@@ -449,12 +457,35 @@
         }
     }
 
+    @media screen and (min-width:768px){
+        width: 85vw;
+    }
 }
 /* ------------------------------- */
 
 
+#happy__costumers{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 95vw;
+
+    #header__costumers{
+        display: flex;
+    }
+
+    @media screen and (min-width:768px){
+        width: 85vw;
+    }
+
+    
+}
+
 /* ---------- newslletter ----------*/
 #newsletter{
+    display: block;
+    margin: auto;
+    width: 95vw;
     position: relative;
     margin-bottom: -7rem;
     background-color: var(--primary-color--);
@@ -513,6 +544,7 @@
     }
 
     @media screen and (min-width:768px){
+        width: 85vw;
         display: flex;
         gap: 3rem;
         align-items: center;
