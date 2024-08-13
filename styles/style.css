@@ -18,6 +18,26 @@
     src: url('../assets/fonts/Internal_CF/Fontspring-DEMO-integralcf-bold.otf');
 }
 
+@keyframes transitionCarrousel {
+    from{
+        transform: translateX(20%);
+    }
+
+    to{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes transitionCarrouselBack {
+    from{
+        transform: translateX(-20%);
+    }
+
+    to{
+        transform: translateX(0%);
+    }
+}
+
 /* Variaveis css */
 :root{
     --primary-color--:#000000;
@@ -512,6 +532,7 @@
 
         &::-webkit-scrollbar{
             display: none;
+            scroll-behavior: smooth;
         }
 
         position: relative;
@@ -523,6 +544,9 @@
         margin-top: 2rem;
 
         @media screen and (min-width:768px){
+            grid-template-columns: repeat(5, 99.5%)
+        }
+        @media screen and (min-width:1024px){
             grid-template-columns: repeat(5, 400px)
         }
 
