@@ -574,6 +574,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
     #main__footer{
         padding-top: 12rem;
         display: flex;
@@ -596,6 +597,41 @@
 
         @media screen and (min-width:1200px){
             width:90vw;
+        }
+    }
+
+    #sub__footer{
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 10vh;
+        width: 95vw;
+
+        p{
+            font-size: 14px;
+        }
+
+        #payments{
+            display: flex;
+            gap:0.5rem;
+
+            li{
+                border-radius: 6px;
+                background-color: white;
+                width: 46px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        @media screen and (min-width:768px){
+            width: 85vw;
+            flex-direction: row;
         }
     }
 }
