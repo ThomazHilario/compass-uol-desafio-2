@@ -691,6 +691,26 @@
                 }
             }
 
+            ul{
+                display: flex;
+                gap: 1rem;
+                li{
+                    cursor: pointer;
+                    flex-grow: 0;
+                    background-color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 28px;
+                    width: 28px;
+                    border-radius: 50%;
+                }
+
+                li:nth-child(2){
+                    background-color: var(--primary-color--);
+                }
+            }
+
             @media screen and (min-width:768px){
                 flex-grow: 0;
             }
