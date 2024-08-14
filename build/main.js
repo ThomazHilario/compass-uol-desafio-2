@@ -44,6 +44,7 @@ rightArrowButton.addEventListener('click', () => {
         }
     }
 });
+// PlayAnimation
 function playAnimation(nameTransition, timeTransition) {
     containerCustomers.style.animationName = nameTransition;
     containerCustomers.style.animationDuration = timeTransition;
@@ -52,3 +53,9 @@ function playAnimation(nameTransition, timeTransition) {
         containerCustomers.style.animationDuration = '';
     }, 400);
 }
+const headerPromo = document.getElementById('header__promo');
+const buttonHeaderPromo = headerPromo.lastElementChild;
+buttonHeaderPromo.addEventListener('click', () => {
+    headerPromo.style.display = 'none';
+    console.log('oi');
+});

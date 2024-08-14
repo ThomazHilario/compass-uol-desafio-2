@@ -42,6 +42,7 @@ leftArrowButton.addEventListener('click', () => {
 
 rightArrowButton.addEventListener('click', () => {
     if(containerCustomers.scrollLeft >= 0 && containerCustomers.scrollLeft < containerCustomers.scrollWidth){
+
         step++
 
         // Active animation
@@ -65,6 +66,7 @@ rightArrowButton.addEventListener('click', () => {
     }
 })
 
+// PlayAnimation
 function playAnimation(nameTransition:string, timeTransition:string){
     containerCustomers.style.animationName = nameTransition
         containerCustomers.style.animationDuration = timeTransition
@@ -74,3 +76,12 @@ function playAnimation(nameTransition:string, timeTransition:string){
         containerCustomers.style.animationDuration = ''
     },400)
 }
+
+const headerPromo = document.getElementById('header__promo') as HTMLDivElement
+
+const buttonHeaderPromo = headerPromo.lastElementChild as HTMLButtonElement
+
+buttonHeaderPromo.addEventListener('click', () => {
+    headerPromo.style.display = 'none'
+    console.log('oi')
+})
