@@ -1,0 +1,30 @@
+[
+        {
+            "image":"assets/arrivals/t-shirt.svg",
+            "price":120,
+            "title":"T-Shirt With Tape Details",
+            "discount":null,
+            "rating":4
+        },
+        {
+            "image":"assets/arrivals/skinny-fet-jeans.svg",
+            "price":260,
+            "title":"Skinny Fit Jeans",
+            "discount":20,
+            "rating":3
+        },
+        {
+            "image":"assets/arrivals/checkred-shirt.svg",
+            "price":180,
+            "title":"Skinny Fit Jeans",
+            "discount":null,
+            "rating":4
+        },
+        {
+            "image":"assets/arrivals/sleeve-t-shirt.svg",
+            "price":160,
+            "title":"Sleeve T-Shirt",
+            "discount":30,
+            "rating":4
+        }
+]

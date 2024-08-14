@@ -1,67 +1,14 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 // import generateStars
 import { generateStars } from "./modulos/modules.js";
-// Arrivals 
-const productsArrivals = [
-    {
-        image: 'assets/arrivals/t-shirt.svg',
-        price: 120,
-        title: 'T-SHIRT WITH TAPE DETAILS',
-        discount: null,
-        rating: 4
-    },
-    {
-        image: 'assets/arrivals/skinny-fet-jeans.svg',
-        price: 260,
-        title: 'SKINNY FIT JEANS',
-        discount: 20,
-        rating: 3
-    },
-    {
-        image: 'assets/arrivals/checkred-shirt.svg',
-        price: 180,
-        title: 'SKINNY FIT JEANS',
-        discount: null,
-        rating: 4
-    },
-    {
-        image: 'assets/arrivals/sleeve-t-shirt.svg',
-        price: 160,
-        title: 'SKINNY FIT JEANS',
-        discount: 30,
-        rating: 4
-    }
-];
-// Top Selling
-const productsTopSelling = [
-    {
-        image: 'assets/top_selling/Vertical-Striped-Shirt.svg',
-        price: 232,
-        title: 'Vertical Striped Shirt',
-        discount: 20,
-        rating: 5
-    },
-    {
-        image: 'assets/top_selling/Courage-Graphic-T-Shirt.svg',
-        price: 145,
-        title: 'Courage Graphic T-shirt',
-        discount: null,
-        rating: 4
-    },
-    {
-        image: 'assets/top_selling/Loose-Fit-Bermuda-Shorts.svg',
-        price: 80,
-        title: 'Loose Fit Bermuda Shorts',
-        discount: null,
-        rating: 3
-    },
-    {
-        image: 'assets/top_selling/Faded-Skinny-Jeans.svg',
-        price: 210,
-        title: 'Faded Skinny Jeans',
-        discount: null,
-        rating: 4
-    },
-];
 // insertProduct
 function insertProducts(products, localSection) {
     // Building tag
@@ -105,7 +52,20 @@ function insertProducts(products, localSection) {
 }
 // containers products
 const containersProducts = document.querySelectorAll('.container__products');
-// Insert arrivals Products
-insertProducts(productsArrivals, containersProducts[0]);
-// Insert top selling products
-insertProducts(productsTopSelling, containersProducts[1]);
+// getData in json
+function getData() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            // request
+            const [arrivals, selling] = yield Promise.all([yield fetch('../mocks/arrivals.json'), yield fetch('../mocks/selling.json')]);
+            // Insert arrivals Products
+            insertProducts(yield arrivals.json(), containersProducts[0]);
+            // Insert top selling products
+            insertProducts(yield selling.json(), containersProducts[1]);
+        }
+        catch (e) {
+            console.log(e);
+        }
+    });
+}
+getData();

@@ -10,71 +10,6 @@ interface ProductProps{
     discount:number | null;
 }
 
-// Arrivals 
-const productsArrivals:ProductProps[] = [
-    {
-        image:'assets/arrivals/t-shirt.svg',
-        price:120,
-        title:'T-SHIRT WITH TAPE DETAILS',
-        discount:null,
-        rating:4
-    },
-    {
-        image:'assets/arrivals/skinny-fet-jeans.svg',
-        price:260,
-        title:'SKINNY FIT JEANS',
-        discount:20,
-        rating:3
-    },
-    {
-        image:'assets/arrivals/checkred-shirt.svg',
-        price:180,
-        title:'SKINNY FIT JEANS',
-        discount:null,
-        rating:4
-    },
-    {
-        image:'assets/arrivals/sleeve-t-shirt.svg',
-        price:160,
-        title:'SKINNY FIT JEANS',
-        discount:30,
-        rating:4
-    }
-]
-
-// Top Selling
-const productsTopSelling:ProductProps[] = [
-    {
-        image:'assets/top_selling/Vertical-Striped-Shirt.svg',
-        price:232,
-        title:'Vertical Striped Shirt',
-        discount:20,
-        rating:5
-    },
-    {
-        image:'assets/top_selling/Courage-Graphic-T-Shirt.svg',
-        price:145,
-        title:'Courage Graphic T-shirt',
-        discount:null,
-        rating:4
-    },
-    {
-        image:'assets/top_selling/Loose-Fit-Bermuda-Shorts.svg',
-        price:80,
-        title:'Loose Fit Bermuda Shorts',
-        discount:null,
-        rating:3
-    },
-    {
-        image:'assets/top_selling/Faded-Skinny-Jeans.svg',
-        price:210,
-        title:'Faded Skinny Jeans',
-        discount:null,
-        rating:4
-    },
-]
-
-
 // insertProduct
 function insertProducts(products:ProductProps[], localSection:HTMLDivElement){
 
@@ -123,9 +58,22 @@ function insertProducts(products:ProductProps[], localSection:HTMLDivElement){
 
 // containers products
 const containersProducts = document.querySelectorAll('.container__products')
-    
-// Insert arrivals Products
-insertProducts(productsArrivals, containersProducts[0] as HTMLDivElement)
 
-// Insert top selling products
-insertProducts(productsTopSelling, containersProducts[1] as HTMLDivElement)
+// getData in json
+async function getData(){
+    try{
+        
+        // request
+        const [arrivals, selling] = await Promise.all([await fetch('../mocks/arrivals.json'), await fetch('../mocks/selling.json')])
+
+        // Insert arrivals Products
+        insertProducts(await arrivals.json(), containersProducts[0] as HTMLDivElement)
+
+        // Insert top selling products
+        insertProducts(await selling.json(), containersProducts[1] as HTMLDivElement)
+    }catch(e){
+        console.log(e)
+    }
+}
+
+getData()
