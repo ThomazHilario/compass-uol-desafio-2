@@ -631,7 +631,8 @@
     display: block;
     margin: auto;
     width: 95vw;
-    margin-bottom: -5rem;
+    position: relative;
+    margin-bottom: -8rem;
     background-color: var(--primary-color--);
     color: white;
     padding: 36px 24px;
@@ -686,8 +687,8 @@
     }
 
     @media screen and (min-width:768px){
-        margin-bottom: 0;
         width: 85vw;
+        margin-bottom: -6rem;
         display: flex;
         gap: 3rem;
         align-items: center;
@@ -704,7 +705,7 @@
     align-items: center;
     
     #main__footer{  
-        padding-top: 12rem;
+        padding-top: 10rem;
         display: flex;
         flex-wrap: wrap;
         width: 95vw;
