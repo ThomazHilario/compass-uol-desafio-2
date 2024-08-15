@@ -1,9 +1,14 @@
 const buttonMenu = document.getElementById('button_menu')
 const dialogMenu = document.getElementById('dialog__menu') as HTMLDialogElement
+const buttonCloseDialog = document.getElementById('btn-close-dialog')
 
 // Exibindo modal
 buttonMenu?.addEventListener('click', () => {
     dialogMenu.showModal()
+})
+
+buttonCloseDialog?.addEventListener('click', () => {
+    dialogMenu.close()
 })
 
 // navigationCustomers

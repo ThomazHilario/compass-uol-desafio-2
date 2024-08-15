@@ -1,9 +1,13 @@
 "use strict";
 const buttonMenu = document.getElementById('button_menu');
 const dialogMenu = document.getElementById('dialog__menu');
+const buttonCloseDialog = document.getElementById('btn-close-dialog');
 // Exibindo modal
 buttonMenu === null || buttonMenu === void 0 ? void 0 : buttonMenu.addEventListener('click', () => {
     dialogMenu.showModal();
+});
+buttonCloseDialog === null || buttonCloseDialog === void 0 ? void 0 : buttonCloseDialog.addEventListener('click', () => {
+    dialogMenu.close();
 });
 // navigationCustomers
 const navigationCustomers = document.querySelector('#navigation__customers');
