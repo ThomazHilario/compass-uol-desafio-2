@@ -10,10 +10,21 @@ formNewsletter.addEventListener('submit', (e) => {
     e.preventDefault();
     // get input
     const input = (_a = formNewsletter.firstElementChild) === null || _a === void 0 ? void 0 : _a.lastElementChild;
-    if (regexForm.test(input.value)) {
-        alert('Your subscribe in newsLetter');
+    verifyValue(input.value, input);
+});
+function verifyValue(valueInput, input) {
+    if (valueInput == '' || !regexForm.test(valueInput)) {
+        const label = input.parentElement;
+        label.style.border = '2px solid red';
+        if (valueInput == '') {
+            return 'Preencha o campo acima';
+        }
+        if (!regexForm.test(valueInput)) {
+            return 'Email Invalido';
+        }
     }
     else {
-        alert('invalid email');
+        const label = input.parentElement;
+        label.style.border = '0';
     }
-});
+}

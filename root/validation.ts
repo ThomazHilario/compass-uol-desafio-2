@@ -13,10 +13,27 @@ formNewsletter.addEventListener('submit', (e) => {
     // get input
     const input = formNewsletter.firstElementChild?.lastElementChild as HTMLInputElement
 
-    if(regexForm.test(input.value)){
-        alert('Your subscribe in newsLetter')
-    }else{
-        alert('invalid email')
-    }
+    
+    verifyValue(input.value, input)
     
 })
+
+function verifyValue(valueInput:string, input:HTMLInputElement){
+
+    if(valueInput == '' || !regexForm.test(valueInput)){
+        const label = input.parentElement as HTMLLabelElement
+        label.style.border = '2px solid red'
+
+        if(valueInput == ''){
+            return 'Preencha o campo acima'
+        }
+
+        if(!regexForm.test(valueInput)){
+            return 'Email Invalido'
+        }
+    } else{
+        const label = input.parentElement as HTMLLabelElement
+        label.style.border = '0'
+    }
+
+}

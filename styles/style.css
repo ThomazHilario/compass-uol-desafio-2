@@ -674,6 +674,11 @@
             }
         }
         
+        p{
+            font-size: 1.5rem;
+            display: none;
+            color: rgb(245, 74, 74);
+        }
 
         button{
             background-color: white;
