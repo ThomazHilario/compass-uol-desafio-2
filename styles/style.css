@@ -611,8 +611,15 @@
             article{
 
                 h3{
+                    display: flex;
+                    gap: 0.3rem;
                     font-family: 'satoshi-bold';
                     font-size: 1.1rem;
+
+                    span{
+                        display: flex;
+                        align-items: center;
+                    }
                 }
 
                 p{
