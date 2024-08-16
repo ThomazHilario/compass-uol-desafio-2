@@ -1,5 +1,5 @@
 "use strict";
-const buttonMenu = document.getElementById('button_menu');
+const buttonMenu = document.getElementById('button__menu');
 const dialogMenu = document.getElementById('dialog__menu');
 const buttonCloseDialog = document.getElementById('btn-close-dialog');
 // Exibindo modal

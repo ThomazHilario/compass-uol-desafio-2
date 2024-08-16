@@ -1,4 +1,4 @@
-const buttonMenu = document.getElementById('button_menu')
+const buttonMenu = document.getElementById('button__menu')
 const dialogMenu = document.getElementById('dialog__menu') as HTMLDialogElement
 const buttonCloseDialog = document.getElementById('btn-close-dialog')
 
