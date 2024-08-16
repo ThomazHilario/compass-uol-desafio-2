@@ -1,21 +1,21 @@
 @font-face {
     font-family: 'satoshi';
-    src: url('../assets/fonts/Satoshi/Fonts/OTF/Satoshi-Regular.otf');
+    src: url('../assets/fonts/Satoshi-Regular.ttf');
 }
 
 @font-face {
     font-family: 'satoshi-bold';
-    src: url('../assets/fonts/Satoshi/Fonts/OTF/Satoshi-Bold.otf');
+    src: url('../assets/fonts/Satoshi-Bold.otf');
 }
 
 @font-face {
     font-family: 'internal';
-    src: url('../assets/fonts/Internal_CF/Fontspring-DEMO-integralcf-regular.otf');
+    src: url('../assets/fonts/Integralcf-regular.otf');
 }
 
 @font-face {
     font-family: 'internal-bold';
-    src: url('../assets/fonts/Internal_CF/Fontspring-DEMO-integralcf-bold.otf');
+    src: url('../assets/fonts/integralcf-bold.otf');
 }
 
 @keyframes transitionCarrousel {
