@@ -13,7 +13,10 @@ Para conseguir executar o projeto em sua máquina, é necessário:
 ```
 git clone https://github.com/ThomazHilario/compass-uol-desafio-2.git
 ```
-## 🤝 Colaboradores
+
+2. Abrir o arquivo HTML no navegador.
+
+## Author
 
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
