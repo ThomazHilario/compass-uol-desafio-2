@@ -28,6 +28,11 @@ const containerCustomers = document.getElementById('container__customers') as HT
 const leftArrowButton = navigationCustomers?.firstElementChild as HTMLButtonElement
 const rightArrowButton = navigationCustomers?.lastElementChild as HTMLButtonElement
 
+// Close header promo event
+buttonHeaderPromo.addEventListener('click', () => {
+    headerPromo.style.display = 'none'
+})
+
 // Open modal
 buttonMenu?.addEventListener('click', () => {
     dialogMenu.showModal()
@@ -45,8 +50,8 @@ const containerScrollWidth = containerCustomers.scrollWidth
 const containerScrollLeft = containerCustomers.scrollLeft
 
 leftArrowButton.addEventListener('click', () => {
-    
     if(containerCustomers.scrollLeft < containerCustomers.scrollWidth){
+        // Decrement step
         step--
 
         // Active animation
@@ -54,9 +59,10 @@ leftArrowButton.addEventListener('click', () => {
             playAnimation('transitionCarrouselBack','0.2s')
         }
 
+        // return scroll
         containerCustomers.scroll(
             {
-                left:containerCustomers.scrollLeft - (containerCustomers.scrollWidth / 5) - 2.65
+                left:containerCustomers.scrollLeft - (containerCustomers.scrollWidth / containerCustomers.children.length) - 3
             }
         )    
     }
@@ -65,25 +71,27 @@ leftArrowButton.addEventListener('click', () => {
 rightArrowButton.addEventListener('click', () => {
     if(containerCustomers.scrollLeft >= 0 && containerCustomers.scrollLeft < containerCustomers.scrollWidth){
 
+        // Increment step
         step++
 
         // Active animation
         playAnimation('transitionCarrousel','0.2s')
 
+        // Advancing scroll
         containerCustomers.scroll(
             {
-                left: containerCustomers.scrollLeft + (containerCustomers.scrollWidth / 5) + 3.65
+                left: containerCustomers.scrollLeft + (containerCustomers.scrollWidth / containerCustomers.children.length) + 3
             }
         )
 
-        if(step == containerCustomers.children.length && window.innerWidth < 1024){
-            containerCustomers.scroll(
-                {
-                    left: 0
-                }
-            ) 
-            step = 0  
+        if (step == containerCustomers.children.length && window.innerWidth < 1024) {
+            containerCustomers.scroll({
+                left: 0
+            });
+            step = 0;
         }
+
+        
     }
 })
 
@@ -97,7 +105,3 @@ function playAnimation(nameTransition:string, timeTransition:string){
         containerCustomers.style.animationDuration = ''
     },400)
 }
-
-buttonHeaderPromo.addEventListener('click', () => {
-    headerPromo.style.display = 'none'
-})

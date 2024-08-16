@@ -21,6 +21,10 @@ const containerCustomers = document.getElementById('container__customers');
 // arrows
 const leftArrowButton = navigationCustomers === null || navigationCustomers === void 0 ? void 0 : navigationCustomers.firstElementChild;
 const rightArrowButton = navigationCustomers === null || navigationCustomers === void 0 ? void 0 : navigationCustomers.lastElementChild;
+// Close header promo event
+buttonHeaderPromo.addEventListener('click', () => {
+    headerPromo.style.display = 'none';
+});
 // Open modal
 buttonMenu === null || buttonMenu === void 0 ? void 0 : buttonMenu.addEventListener('click', () => {
     dialogMenu.showModal();
@@ -35,23 +39,27 @@ const containerScrollWidth = containerCustomers.scrollWidth;
 const containerScrollLeft = containerCustomers.scrollLeft;
 leftArrowButton.addEventListener('click', () => {
     if (containerCustomers.scrollLeft < containerCustomers.scrollWidth) {
+        // Decrement step
         step--;
         // Active animation
         if (containerCustomers.scrollLeft > 0) {
             playAnimation('transitionCarrouselBack', '0.2s');
         }
+        // return scroll
         containerCustomers.scroll({
-            left: containerCustomers.scrollLeft - (containerCustomers.scrollWidth / 5) - 2.65
+            left: containerCustomers.scrollLeft - (containerCustomers.scrollWidth / containerCustomers.children.length) - 3
         });
     }
 });
 rightArrowButton.addEventListener('click', () => {
     if (containerCustomers.scrollLeft >= 0 && containerCustomers.scrollLeft < containerCustomers.scrollWidth) {
+        // Increment step
         step++;
         // Active animation
         playAnimation('transitionCarrousel', '0.2s');
+        // Advancing scroll
         containerCustomers.scroll({
-            left: containerCustomers.scrollLeft + (containerCustomers.scrollWidth / 5) + 3.65
+            left: containerCustomers.scrollLeft + (containerCustomers.scrollWidth / containerCustomers.children.length) + 3
         });
         if (step == containerCustomers.children.length && window.innerWidth < 1024) {
             containerCustomers.scroll({
@@ -70,6 +78,3 @@ function playAnimation(nameTransition, timeTransition) {
         containerCustomers.style.animationDuration = '';
     }, 400);
 }
-buttonHeaderPromo.addEventListener('click', () => {
-    headerPromo.style.display = 'none';
-});
