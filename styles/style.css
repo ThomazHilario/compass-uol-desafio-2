@@ -226,20 +226,43 @@
         #menu-auxiliar{
             list-style: none;
             display: flex;
-            gap: 0.8rem;
+            gap: 0.5rem;
         
-            li:nth-child(1){
+            li, li > a{
                 display: flex;
                 justify-content: center;
                 align-items: center;
+            }
+            
+            li:nth-child(1){
+
+                #seach__mobile{
+                    display: flex;
+                    align-items: center;
+
+                    &:has(input[data-input-active='true']){
+                        padding:0px 2px;
+                        background-color: var(--second-color--);
+                        border-radius: 20px;
+                    }
         
-                input{
-                    display: block;
-                    border: 0;
-                    background-color: var(--second-color--);
-                    padding: 5px;
-                    border-radius: 20px;
-                    width: 100%;
+                    #open__seach{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    input{
+                        outline: none;
+                        background-color: transparent;
+                        display: none;
+                        width: 30vw;
+                        border: 0;
+                    }
+                }
+
+                @media screen and (min-width:768px){
+                    display: none;    
                 }
             }
         }

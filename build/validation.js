@@ -2,7 +2,7 @@
 var _a;
 // Form Newsletter
 const formNewsletter = document.querySelector('#newsletter > form');
-// get input
+// Get input
 const input = (_a = formNewsletter.firstElementChild) === null || _a === void 0 ? void 0 : _a.lastElementChild;
 // Regex
 const regexForm = new RegExp(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/);

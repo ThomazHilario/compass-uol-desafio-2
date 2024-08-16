@@ -1,7 +1,7 @@
 // Form Newsletter
 const formNewsletter = document.querySelector('#newsletter > form') as HTMLFormElement
 
-// get input
+// Get input
 const input = formNewsletter.firstElementChild?.lastElementChild as HTMLInputElement
 
 // Regex

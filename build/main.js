@@ -1,14 +1,19 @@
 "use strict";
+// header-promo
+const headerPromo = document.getElementById('header__promo');
+const buttonHeaderPromo = headerPromo.lastElementChild;
+// Menu-mobile
 const buttonMenu = document.getElementById('button__menu');
-const dialogMenu = document.getElementById('dialog__menu');
 const buttonCloseDialog = document.getElementById('btn-close-dialog');
-// Exibindo modal
-buttonMenu === null || buttonMenu === void 0 ? void 0 : buttonMenu.addEventListener('click', () => {
-    dialogMenu.showModal();
+const dialogMenu = document.getElementById('dialog__menu');
+// seach-mobile
+const btnSeach = document.getElementById('open__seach');
+const seachInput = btnSeach.nextElementSibling;
+btnSeach === null || btnSeach === void 0 ? void 0 : btnSeach.addEventListener('click', () => {
+    seachInput.style.display = `${seachInput.style.display == '' ? 'block' : ''}`;
+    seachInput.dataset.inputActive = `${seachInput.dataset.inputActive == 'true' ? 'false' : 'true'}`;
 });
-buttonCloseDialog === null || buttonCloseDialog === void 0 ? void 0 : buttonCloseDialog.addEventListener('click', () => {
-    dialogMenu.close();
-});
+//------------------- Customers -------------------//
 // navigationCustomers
 const navigationCustomers = document.querySelector('#navigation__customers');
 // ContainerCustomers
@@ -16,6 +21,14 @@ const containerCustomers = document.getElementById('container__customers');
 // arrows
 const leftArrowButton = navigationCustomers === null || navigationCustomers === void 0 ? void 0 : navigationCustomers.firstElementChild;
 const rightArrowButton = navigationCustomers === null || navigationCustomers === void 0 ? void 0 : navigationCustomers.lastElementChild;
+// Open modal
+buttonMenu === null || buttonMenu === void 0 ? void 0 : buttonMenu.addEventListener('click', () => {
+    dialogMenu.showModal();
+});
+// Close modal
+buttonCloseDialog === null || buttonCloseDialog === void 0 ? void 0 : buttonCloseDialog.addEventListener('click', () => {
+    dialogMenu.close();
+});
 let step = 0;
 //containerScrollWidth and containerScrollLeft
 const containerScrollWidth = containerCustomers.scrollWidth;
@@ -57,9 +70,6 @@ function playAnimation(nameTransition, timeTransition) {
         containerCustomers.style.animationDuration = '';
     }, 400);
 }
-const headerPromo = document.getElementById('header__promo');
-const buttonHeaderPromo = headerPromo.lastElementChild;
 buttonHeaderPromo.addEventListener('click', () => {
     headerPromo.style.display = 'none';
-    console.log('oi');
 });

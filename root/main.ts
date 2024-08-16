@@ -1,15 +1,22 @@
+// header-promo
+const headerPromo = document.getElementById('header__promo') as HTMLDivElement
+const buttonHeaderPromo = headerPromo.lastElementChild as HTMLButtonElement
+
+// Menu-mobile
 const buttonMenu = document.getElementById('button__menu')
-const dialogMenu = document.getElementById('dialog__menu') as HTMLDialogElement
 const buttonCloseDialog = document.getElementById('btn-close-dialog')
+const dialogMenu = document.getElementById('dialog__menu') as HTMLDialogElement
 
-// Exibindo modal
-buttonMenu?.addEventListener('click', () => {
-    dialogMenu.showModal()
+// seach-mobile
+const btnSeach = document.getElementById('open__seach') as HTMLButtonElement
+const seachInput = btnSeach.nextElementSibling as HTMLInputElement
+
+btnSeach?.addEventListener('click', () => {
+    seachInput.style.display = `${seachInput.style.display == '' ? 'block' : ''}`
+    seachInput.dataset.inputActive = `${seachInput.dataset.inputActive == 'true' ? 'false' : 'true'}`
 })
 
-buttonCloseDialog?.addEventListener('click', () => {
-    dialogMenu.close()
-})
+//------------------- Customers -------------------//
 
 // navigationCustomers
 const navigationCustomers = document.querySelector('#navigation__customers')
@@ -20,6 +27,16 @@ const containerCustomers = document.getElementById('container__customers') as HT
 // arrows
 const leftArrowButton = navigationCustomers?.firstElementChild as HTMLButtonElement
 const rightArrowButton = navigationCustomers?.lastElementChild as HTMLButtonElement
+
+// Open modal
+buttonMenu?.addEventListener('click', () => {
+    dialogMenu.showModal()
+})
+
+// Close modal
+buttonCloseDialog?.addEventListener('click', () => {
+    dialogMenu.close()
+})
 
 let step = 0
 
@@ -52,7 +69,6 @@ rightArrowButton.addEventListener('click', () => {
 
         // Active animation
         playAnimation('transitionCarrousel','0.2s')
-        
 
         containerCustomers.scroll(
             {
@@ -74,7 +90,7 @@ rightArrowButton.addEventListener('click', () => {
 // PlayAnimation
 function playAnimation(nameTransition:string, timeTransition:string){
     containerCustomers.style.animationName = nameTransition
-        containerCustomers.style.animationDuration = timeTransition
+    containerCustomers.style.animationDuration = timeTransition
 
     setTimeout(() => {
         containerCustomers.style.animationName = ''
@@ -82,11 +98,6 @@ function playAnimation(nameTransition:string, timeTransition:string){
     },400)
 }
 
-const headerPromo = document.getElementById('header__promo') as HTMLDivElement
-
-const buttonHeaderPromo = headerPromo.lastElementChild as HTMLButtonElement
-
 buttonHeaderPromo.addEventListener('click', () => {
     headerPromo.style.display = 'none'
-    console.log('oi')
 })
