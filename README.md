@@ -16,14 +16,12 @@ git clone https://github.com/ThomazHilario/compass-uol-desafio-2.git
 
 2. Abrir o arquivo HTML no navegador.
 
-## Author
-
-Agradecemos às seguintes pessoas que contribuíram para este projeto:
+## Author:
 
 <table>
   <tr>
     <td align="center">
-      <a href="#" title="defina o título do link">
+      <a href="https://github.com/ThomazHilario" title="Repositório do Thomaz Alves">
         <img src="https://avatars.githubusercontent.com/u/72676393?v=4" width="100px;" alt="Foto do Thomaz Alves no GitHub"/><br>
         <sub>
           <b>Thomaz Alves</b>
