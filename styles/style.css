@@ -365,22 +365,27 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 10px 10px;
+
+    svg{
+        &:nth-child(2){
+            width: auto;
+        }
+
+        height: 22px;
+        width: 100px;
+    
+        @media screen and (min-width:768px) {
+            height: 26px;
+            width: auto
+        };
+    
+        @media screen and (min-width:1024px){
+            height: 35px;
+        };
+    }
+
 }
 
-#banner__brands > img{
-    height: 22px;
-    width: 100px;
-
-    @media screen and (min-width:768px) {
-        height: 32px;
-        width: 133px;
-    };
-
-    @media screen and (min-width:1024px){
-        height: 35px;
-        width: 200px;
-    };
-}
 /* --------------------------------*/
 
 /* ---------- section products ----------*/
