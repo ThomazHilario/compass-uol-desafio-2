@@ -759,10 +759,7 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        flex: 1.5;
-
-        
-        
+        flex: 1.5;        
 
         label{
             &:has(input:user-invalid){
@@ -784,18 +781,49 @@
                 border-radius: 20px;
             }
         }
-        
-        p{
-            font-size: 1.5rem;
-            display: none;
-            color: rgb(245, 74, 74);
-        }
 
         button{
             background-color: white;
             padding:12px 16px;
             border-radius: 62px;
             font-weight: bold;
+        }
+    }
+
+    #newsletter__dialog{
+        flex-direction: column;
+        top: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 320px;
+        border-radius: 5px;
+        border: 0;
+        padding: 5px;
+
+        article{
+            display: flex;
+            flex-direction: column;
+            h3{
+                font-size: 2rem;
+            }
+    
+            p{
+                margin: 0.5rem 0;
+                text-align: justify;
+            }
+    
+            button{
+                align-self: end;
+                background-color: rgb(79, 79, 223);
+                color: white;
+                padding: 0.5rem 1.5rem;
+                border-radius: 5px;
+            }
+        }
+
+        @media screen and (min-width:768px){
+            width: 400px;
+            padding: 1rem;
         }
     }
 

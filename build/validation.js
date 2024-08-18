@@ -1,9 +1,12 @@
 "use strict";
-var _a;
+var _a, _b;
 // Form Newsletter
 const formNewsletter = document.querySelector('#newsletter > form');
+// Dialog Newsletter
+const dialogNewsletter = document.getElementById('newsletter__dialog');
+const btnCloseDialogNewsletter = (_a = dialogNewsletter.firstElementChild) === null || _a === void 0 ? void 0 : _a.lastElementChild;
 // Get input
-const input = (_a = formNewsletter.firstElementChild) === null || _a === void 0 ? void 0 : _a.lastElementChild;
+const input = (_b = formNewsletter.firstElementChild) === null || _b === void 0 ? void 0 : _b.lastElementChild;
 // Regex
 const regexForm = new RegExp(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/);
 // Required message
@@ -29,6 +32,15 @@ function verifyValue(valueInput) {
 // Cancel Refresh page in submit form
 formNewsletter.addEventListener('submit', (e) => {
     e.preventDefault();
+    // CustomValidity
+    if (verifyValue(input.value) === 'ok') {
+        // Show Modal
+        dialogNewsletter.showModal();
+    }
+});
+// Close Modal
+btnCloseDialogNewsletter.addEventListener('click', () => {
+    dialogNewsletter.close();
 });
 // Input Event 
 input.addEventListener('input', () => {

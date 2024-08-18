@@ -1,6 +1,10 @@
 // Form Newsletter
 const formNewsletter = document.querySelector('#newsletter > form') as HTMLFormElement
 
+// Dialog Newsletter
+const dialogNewsletter = document.getElementById('newsletter__dialog') as HTMLDialogElement
+const btnCloseDialogNewsletter = dialogNewsletter.firstElementChild?.lastElementChild as HTMLButtonElement
+
 // Get input
 const input = formNewsletter.firstElementChild?.lastElementChild as HTMLInputElement
 
@@ -36,6 +40,16 @@ function verifyValue(valueInput:string){
 formNewsletter.addEventListener('submit', (e) => {
     e.preventDefault()
 
+    // CustomValidity
+    if(verifyValue(input.value) === 'ok'){
+        // Show Modal
+        dialogNewsletter.showModal()
+    }
+})
+
+// Close Modal
+btnCloseDialogNewsletter.addEventListener('click', () => {
+    dialogNewsletter.close()
 })
 
 // Input Event 
