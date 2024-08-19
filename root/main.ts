@@ -2,12 +2,29 @@
 const headerPromo = document.getElementById('header__promo') as HTMLDivElement
 const buttonHeaderPromo = headerPromo.lastElementChild as HTMLButtonElement
 
-// Menu-mobile
+// Close header promo event
+buttonHeaderPromo.addEventListener('click', () => {
+    headerPromo.style.display = 'none'
+})
+
+//------------------- Menu Mobile -------------------//
 const buttonMenu = document.getElementById('button__menu')
 const buttonCloseDialog = document.getElementById('btn-close-dialog')
 const dialogMenu = document.getElementById('dialog__menu') as HTMLDialogElement
 
-// seach-mobile
+// Open modal
+buttonMenu?.addEventListener('click', () => {
+    dialogMenu.showModal()
+})
+
+// Close modal
+buttonCloseDialog?.addEventListener('click', () => {
+    dialogMenu.close()
+})
+
+//-------------------------------------------------//
+
+//------------------- Seach mobile -------------------//
 const btnSeach = document.getElementById('open__seach') as HTMLButtonElement
 const seachInput = btnSeach.nextElementSibling as HTMLInputElement
 
@@ -15,6 +32,8 @@ btnSeach?.addEventListener('click', () => {
     seachInput.style.display = `${seachInput.style.display == '' ? 'block' : ''}`
     seachInput.dataset.inputActive = `${seachInput.dataset.inputActive == 'true' ? 'false' : 'true'}`
 })
+
+//-------------------------------------------------//
 
 //------------------- Customers -------------------//
 
@@ -28,42 +47,30 @@ const containerCustomers = document.getElementById('container__customers') as HT
 const leftArrowButton = navigationCustomers?.firstElementChild as HTMLButtonElement
 const rightArrowButton = navigationCustomers?.lastElementChild as HTMLButtonElement
 
-// Close header promo event
-buttonHeaderPromo.addEventListener('click', () => {
-    headerPromo.style.display = 'none'
-})
-
-// Open modal
-buttonMenu?.addEventListener('click', () => {
-    dialogMenu.showModal()
-})
-
-// Close modal
-buttonCloseDialog?.addEventListener('click', () => {
-    dialogMenu.close()
-})
-
-let step = 0
+// scroll count
+let scrollCount = 0
 
 //containerScrollWidth and containerScrollLeft
 const containerScrollWidth = containerCustomers.scrollWidth
 const containerScrollLeft = containerCustomers.scrollLeft
 
+// reset scroll and step
 function resetScrollAndStep(){
     containerCustomers.scroll({
         left: 0
     });
-    step = 0;
+    scrollCount = 0;
 }
 
+// Returning scroll to beginning
 function returningScrollToBeginning(){
-    if (step == containerCustomers.children.length && window.innerWidth < 1024) {
+    if (scrollCount == containerCustomers.children.length && window.innerWidth < 1024) {
         // Reset scroll and step
         resetScrollAndStep()
-    } else if(step === 4 && window.innerWidth >= 1024 && window.innerWidth < 1450){
+    } else if(scrollCount === 4 && window.innerWidth >= 1024 && window.innerWidth < 1450){
         // Reset scroll and step
         resetScrollAndStep()
-    } else if(step === 3 && window.innerWidth >= 1450){
+    } else if(scrollCount === 3 && window.innerWidth >= 1450){
         // Reset scroll and step
         resetScrollAndStep()
     }
@@ -71,8 +78,8 @@ function returningScrollToBeginning(){
 
 leftArrowButton.addEventListener('click', () => {
     if(containerCustomers.scrollLeft < containerCustomers.scrollWidth){
-        // Decrement step
-        step--
+        // Decrement scrollCount
+        scrollCount--
 
         // Active animation
         if(containerCustomers.scrollLeft > 0){
@@ -91,8 +98,8 @@ leftArrowButton.addEventListener('click', () => {
 rightArrowButton.addEventListener('click', () => {
     if(containerCustomers.scrollLeft >= 0 && containerCustomers.scrollLeft < containerCustomers.scrollWidth){
 
-        // Increment step
-        step++
+        // Increment scrollCount
+        scrollCount++
 
         // Active animation
         playAnimation('transitionCarrousel','0.2s')
@@ -119,3 +126,5 @@ function playAnimation(nameTransition:string, timeTransition:string){
         containerCustomers.style.animationDuration = ''
     },400)
 }
+
+//-------------------------------------------------//

@@ -2,29 +2,14 @@
 // header-promo
 const headerPromo = document.getElementById('header__promo');
 const buttonHeaderPromo = headerPromo.lastElementChild;
-// Menu-mobile
-const buttonMenu = document.getElementById('button__menu');
-const buttonCloseDialog = document.getElementById('btn-close-dialog');
-const dialogMenu = document.getElementById('dialog__menu');
-// seach-mobile
-const btnSeach = document.getElementById('open__seach');
-const seachInput = btnSeach.nextElementSibling;
-btnSeach === null || btnSeach === void 0 ? void 0 : btnSeach.addEventListener('click', () => {
-    seachInput.style.display = `${seachInput.style.display == '' ? 'block' : ''}`;
-    seachInput.dataset.inputActive = `${seachInput.dataset.inputActive == 'true' ? 'false' : 'true'}`;
-});
-//------------------- Customers -------------------//
-// navigationCustomers
-const navigationCustomers = document.querySelector('#navigation__customers');
-// ContainerCustomers
-const containerCustomers = document.getElementById('container__customers');
-// arrows
-const leftArrowButton = navigationCustomers === null || navigationCustomers === void 0 ? void 0 : navigationCustomers.firstElementChild;
-const rightArrowButton = navigationCustomers === null || navigationCustomers === void 0 ? void 0 : navigationCustomers.lastElementChild;
 // Close header promo event
 buttonHeaderPromo.addEventListener('click', () => {
     headerPromo.style.display = 'none';
 });
+//------------------- Menu Mobile -------------------//
+const buttonMenu = document.getElementById('button__menu');
+const buttonCloseDialog = document.getElementById('btn-close-dialog');
+const dialogMenu = document.getElementById('dialog__menu');
 // Open modal
 buttonMenu === null || buttonMenu === void 0 ? void 0 : buttonMenu.addEventListener('click', () => {
     dialogMenu.showModal();
@@ -33,34 +18,54 @@ buttonMenu === null || buttonMenu === void 0 ? void 0 : buttonMenu.addEventListe
 buttonCloseDialog === null || buttonCloseDialog === void 0 ? void 0 : buttonCloseDialog.addEventListener('click', () => {
     dialogMenu.close();
 });
-let step = 0;
+//-------------------------------------------------//
+//------------------- Seach mobile -------------------//
+const btnSeach = document.getElementById('open__seach');
+const seachInput = btnSeach.nextElementSibling;
+btnSeach === null || btnSeach === void 0 ? void 0 : btnSeach.addEventListener('click', () => {
+    seachInput.style.display = `${seachInput.style.display == '' ? 'block' : ''}`;
+    seachInput.dataset.inputActive = `${seachInput.dataset.inputActive == 'true' ? 'false' : 'true'}`;
+});
+//-------------------------------------------------//
+//------------------- Customers -------------------//
+// navigationCustomers
+const navigationCustomers = document.querySelector('#navigation__customers');
+// ContainerCustomers
+const containerCustomers = document.getElementById('container__customers');
+// arrows
+const leftArrowButton = navigationCustomers === null || navigationCustomers === void 0 ? void 0 : navigationCustomers.firstElementChild;
+const rightArrowButton = navigationCustomers === null || navigationCustomers === void 0 ? void 0 : navigationCustomers.lastElementChild;
+// scroll count
+let scrollCount = 0;
 //containerScrollWidth and containerScrollLeft
 const containerScrollWidth = containerCustomers.scrollWidth;
 const containerScrollLeft = containerCustomers.scrollLeft;
+// reset scroll and step
 function resetScrollAndStep() {
     containerCustomers.scroll({
         left: 0
     });
-    step = 0;
+    scrollCount = 0;
 }
+// Returning scroll to beginning
 function returningScrollToBeginning() {
-    if (step == containerCustomers.children.length && window.innerWidth < 1024) {
+    if (scrollCount == containerCustomers.children.length && window.innerWidth < 1024) {
         // Reset scroll and step
         resetScrollAndStep();
     }
-    else if (step === 4 && window.innerWidth >= 1024 && window.innerWidth < 1450) {
+    else if (scrollCount === 4 && window.innerWidth >= 1024 && window.innerWidth < 1450) {
         // Reset scroll and step
         resetScrollAndStep();
     }
-    else if (step === 3 && window.innerWidth >= 1450) {
+    else if (scrollCount === 3 && window.innerWidth >= 1450) {
         // Reset scroll and step
         resetScrollAndStep();
     }
 }
 leftArrowButton.addEventListener('click', () => {
     if (containerCustomers.scrollLeft < containerCustomers.scrollWidth) {
-        // Decrement step
-        step--;
+        // Decrement scrollCount
+        scrollCount--;
         // Active animation
         if (containerCustomers.scrollLeft > 0) {
             playAnimation('transitionCarrouselBack', '0.2s');
@@ -73,8 +78,8 @@ leftArrowButton.addEventListener('click', () => {
 });
 rightArrowButton.addEventListener('click', () => {
     if (containerCustomers.scrollLeft >= 0 && containerCustomers.scrollLeft < containerCustomers.scrollWidth) {
-        // Increment step
-        step++;
+        // Increment scrollCount
+        scrollCount++;
         // Active animation
         playAnimation('transitionCarrousel', '0.2s');
         // Advancing scroll
@@ -94,3 +99,4 @@ function playAnimation(nameTransition, timeTransition) {
         containerCustomers.style.animationDuration = '';
     }, 400);
 }
+//-------------------------------------------------//
