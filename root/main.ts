@@ -49,6 +49,26 @@ let step = 0
 const containerScrollWidth = containerCustomers.scrollWidth
 const containerScrollLeft = containerCustomers.scrollLeft
 
+function resetScrollAndStep(){
+    containerCustomers.scroll({
+        left: 0
+    });
+    step = 0;
+}
+
+function returningScrollToBeginning(){
+    if (step == containerCustomers.children.length && window.innerWidth < 1024) {
+        // Reset scroll and step
+        resetScrollAndStep()
+    } else if(step === 4 && window.innerWidth >= 1024 && window.innerWidth < 1450){
+        // Reset scroll and step
+        resetScrollAndStep()
+    } else if(step === 3 && window.innerWidth >= 1450){
+        // Reset scroll and step
+        resetScrollAndStep()
+    }
+}
+
 leftArrowButton.addEventListener('click', () => {
     if(containerCustomers.scrollLeft < containerCustomers.scrollWidth){
         // Decrement step
@@ -83,15 +103,9 @@ rightArrowButton.addEventListener('click', () => {
                 left: containerCustomers.scrollLeft + (containerCustomers.scrollWidth / containerCustomers.children.length) + 3
             }
         )
-
-        if (step == containerCustomers.children.length && window.innerWidth < 1024) {
-            containerCustomers.scroll({
-                left: 0
-            });
-            step = 0;
-        }
-
-        
+    
+        // returng scroll to beginning
+        returningScrollToBeginning()
     }
 })
 
